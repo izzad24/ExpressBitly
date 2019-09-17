@@ -11,9 +11,23 @@ export class UrlController {
         let urlData = {
             "id": storage.urls.length + 1,
             "urls": request.body.urls,
-            "shortUrl": "https://sleepy-beaver-ba039a.netlify.com/"+storage.urls.length + 1
+            "shortUrl": "https://warm-scrubland-03694.herokuapp.com/urls/"+storage.urls.length + 1
         }
         storage.urls.push(urlData)
         response.send(urlData)
+    }
+
+    async showList(request: Request, response: Response, next: NextFunction){
+        response.send(storage.urls)
+    }
+
+    async redirect(request: Request, response: Response, next: NextFunction){
+
+        let urlId = request.params.id
+        for(let url of storage.urls){
+            if(parseInt(urlId) == url.id){
+                response.redirect(url.urls)
+            }
+        }
     }
 }
