@@ -1,8 +1,9 @@
-import {TestController} from "./controller/TestController";
+import { UrlController } from "./controller/UrlController";
+
 
 export const Routes = [{
-    method: "get",
-    route: "/hello",
-    controller: TestController,
-    action: "hello"
+    method: "post",
+    route: "/api/shortUrl",
+    controller: UrlController,
+    action: "shortUrl"
 }];

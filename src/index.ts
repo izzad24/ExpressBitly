@@ -5,7 +5,7 @@ import { Routes } from "./routes";
 import * as cors from 'cors'
 
 export const storage = {
-    users: []
+    urls: []
 }
 
 export const srcPath = __dirname
