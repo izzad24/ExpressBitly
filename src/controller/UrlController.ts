@@ -10,7 +10,7 @@ export class UrlController {
         
         let urlData = {
             "id": storage.urls.length + 1,
-            "urls": request.body.url,
+            "urls": request.body.urls,
             "shortUrl": "https://sleepy-beaver-ba039a.netlify.com/"+storage.urls.length + 1
         }
         storage.urls.push(urlData)
