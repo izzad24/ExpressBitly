@@ -14,7 +14,9 @@ export class UrlController {
             "shortUrl": "https://warm-scrubland-03694.herokuapp.com/urls/"+storageLen
         }
         storage.urls.push(urlData)
-        response.send(urlData.shortUrl)
+        response.json({
+            "shortUrl": urlData.shortUrl
+        })
     }
 
     async showList(request: Request, response: Response, next: NextFunction){
