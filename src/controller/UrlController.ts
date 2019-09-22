@@ -7,11 +7,11 @@ export class UrlController {
     // }
 
     async shortUrl(request: Request, response: Response, next: NextFunction){
-        
+        let storageLen = storage.urls.length + 1
         let urlData = {
-            "id": storage.urls.length + 1,
+            "id": storageLen,
             "urls": request.body.urls,
-            "shortUrl": "https://warm-scrubland-03694.herokuapp.com/urls/"+storage.urls.length + 1
+            "shortUrl": "https://warm-scrubland-03694.herokuapp.com/urls/"+storageLen
         }
         storage.urls.push(urlData)
         response.send(urlData.shortUrl)
